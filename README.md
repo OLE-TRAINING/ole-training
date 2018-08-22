@@ -1,31 +1,36 @@
-# initial-project
-Template java project to resolve some exercises.
+# ole-training
+Template project to resolve some exercises.
 
 ## Flow to implement
-For each exercise, there should be a class in the main package to perform the proposed exercise. <br>
-The main class, it will only have the responsibility to call the method responsible for the rule. <br>
-The classes responsible for the rules should be created in the business package. <br>
-And if it is necessary to create some POJO, it should be created in the package model. <br>
+For each exercise of each module, a branch must be created from its respective develop branch to solve it. <br>
+After development is completed, a pull request by github should be opened for proper approval. <br>
 
-## Exercises
-
-**Before any exercise, a dependency on log4 must be added to print the results of some exercises. Sysout will not be used.**<br>
+## Common Exercises
 
 </br>
 
-**1** - Write a Java program to print the result of the following operations. <br>
-Test Data: <br>
-a. -5 + 8 * 6 <br>
-b. (55+9) % 9 <br>
-c. 20 + -3*5 / 8 <br> 
-d. 5 + 15 / 3 * 2 - 8 % 3 <br> 
-Expected Output : <br>
-43 <br>
-1 <br>
-19 <br>
-13 <br>
+**1** - Resolve exercises 5 - 7 - 9 - 10 - 11 - 17 - 19 - 20 from book "Modulo_02"<br>
+**2** - Resolve exercises - from book "Modulo_03"<br>
 
-### Final Test
+## Backend Specific Exercices
+
+<br>
+//TODO
+<br>
+
+## Android Specific Exercices
+
+<br>
+//TODO
+<br>
+
+## iOS Specific Exercices
+
+<br>
+//TODO
+<br>
+
+### Final Common Test
 --------------------
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
