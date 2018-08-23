@@ -11,6 +11,7 @@ After development is completed, a pull request by github should be opened for pr
 
 **1** - Resolve exercises 5 - 7 - 9 - 10 - 11 - 17 - 19 - 20 from book "Modulo_02"<br>
 **2** - Resolve exercises - from book "Modulo_03"<br>
+**3** - Resolve exercises 12 - 14 - 16 from book "Modulo_03"<br>
 
 ## Backend Specific Exercices
 
