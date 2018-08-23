@@ -2,7 +2,7 @@
 Template project to resolve some exercises.
 
 ## Flow to implement
-For each exercise of each module, a branch must be created from its respective develop branch to solve it. <br>
+For each module, a branch must be created from its respective develop branch to solve it. <br>
 After development is completed, a pull request by github should be opened for proper approval. <br>
 
 ## Common Exercises
