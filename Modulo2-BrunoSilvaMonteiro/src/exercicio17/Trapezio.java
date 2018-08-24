@@ -6,9 +6,7 @@ public class Trapezio {
 	
 	public static double calcularAreaTrapezio(double h, double b, double B) {
 		
-		double area = (h*(b+B))/2;
-		
-		return area;
+		return (h*(b+B))/2;
 	}
 	
 	public static void main(String args[]) {

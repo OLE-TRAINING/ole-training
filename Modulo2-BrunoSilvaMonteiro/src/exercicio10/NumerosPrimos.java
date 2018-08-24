@@ -6,15 +6,12 @@ public class NumerosPrimos {
 	
 	public static boolean ehPrimo(int numero) {
 		
-		boolean naoPossuiOutrosDivisores = true;
-		
 		for(int i = 2; i < numero; i++) 
 			if(numero % i == 0) {
-				naoPossuiOutrosDivisores = false;
-				break;
+				return false;
 			}
 		
-		return naoPossuiOutrosDivisores;
+		return true;
 	}
 	
 

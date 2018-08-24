@@ -6,10 +6,7 @@ public class SalarioProporcional {
 	
 	public static double calcularSalario(int numeroDiasTrabalhado, double salarioIntegral) {
 		
-		double coeficienteSalarial = numeroDiasTrabalhado/22.0;
-		double salarioProporcional = salarioIntegral * coeficienteSalarial;
-		
-		return salarioProporcional;
+		return (numeroDiasTrabalhado/22.0) * salarioIntegral;
 	}
 	
 	public static void main(String args[]) {

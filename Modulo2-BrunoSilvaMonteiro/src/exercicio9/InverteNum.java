@@ -27,8 +27,11 @@ public class InverteNum {
 		Scanner s = new Scanner(System.in);
 		int numero; 
 		
-		System.out.print("Digite um inteiro de até 4 números: ");
-		numero = s.nextInt();
+		do {
+			System.out.print("Digite um número de até 4 dígitos: ");
+			numero = s.nextInt();
+		} 
+		while(numero > 9999 || numero < -9999);
 		
 		System.out.println(inverteNumero(numero));
 		

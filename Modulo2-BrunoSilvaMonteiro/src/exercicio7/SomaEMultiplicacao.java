@@ -10,7 +10,7 @@ public class SomaEMultiplicacao {
 		int somaImpares = 0;
 		long multiplicacaoPares = 1; // int causa overflow (32 bits não é o suficiente)
 		
-		while(par <= 30) {
+		for(int i = 0; i < 15; i++) {
 			somaImpares += impar;
 			multiplicacaoPares *= par;
 			
