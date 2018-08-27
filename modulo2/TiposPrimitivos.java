@@ -1,6 +1,6 @@
 public class TiposPrimitivos {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         boolean bo;
         char c;
         byte b;
@@ -49,7 +49,6 @@ public class TiposPrimitivos {
         d = 125.32f;
         System.out.println("valor de d = " + d);
 
-
         f = (float) 125.32;
         System.out.println("valor de f = " + d);
 
@@ -74,7 +73,6 @@ public class TiposPrimitivos {
         System.out.println("valor de bo = " + bo);
         System.out.println("-----------------------------");
 
-
         System.out.println("=============================");
         System.out.println("brincando com os tipos");
         System.out.println("=============================");
@@ -96,6 +94,5 @@ public class TiposPrimitivos {
         System.out.println("i depois da conversao = " + i);
         System.out.println("f depois da conversao = " + f);
         System.out.println("-----------------------------");
-
     }
 }

@@ -16,8 +16,5 @@ public class exer9cap2string {
                 System.out.println("Entre com um número de 4 dígitos");
             }
         } while((numero <10000)==false);
-
-
-
     }
 }

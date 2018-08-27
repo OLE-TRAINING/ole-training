@@ -17,7 +17,5 @@ public class exer10cap2 {
         } else {
             System.out.print( "Não é Primo");
         }
-
-
     }
 }

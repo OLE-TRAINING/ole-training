@@ -9,7 +9,6 @@ public class exer9cap2 {
             System.out.println("Digite um número para ser invertido:");
             numero = sc.nextInt();
             if(numero <10000 && numero > 0){
-                // Não usei String pq ainda não tem String neste capítulo
                 int i = 0;
                 while (numero > 0) {
                     i *= 10;
@@ -27,6 +26,5 @@ public class exer9cap2 {
                 System.out.println("Entre com um número de 4 dígitos");
             }
         } while (numero <10000==false);
-
     }
 }

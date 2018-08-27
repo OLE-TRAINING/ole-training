@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class exer20cap2 {
@@ -61,13 +60,3 @@ public class exer20cap2 {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

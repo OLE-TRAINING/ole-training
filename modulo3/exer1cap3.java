@@ -9,7 +9,6 @@ public class exer1cap3 {
         int tenNumbers [] = new int [vectorSize];
         fillsVector (tenNumbers, vectorSize);
         printVector (tenNumbers, vectorSize);
-
     }
 
     public static void fillsVector (int tenNumbers[], int vectorSize ){
@@ -24,9 +23,6 @@ public class exer1cap3 {
         Scanner sc = new Scanner(System.in);
         for (int index = 0; index < vectorSize; index++){
             System.out.println("Posição ["+index+"] = "+tenNumbers[index]);
-
         }
     }
-
-
 }

@@ -12,7 +12,6 @@ public class exer2cap3 {
         fillsVector (tenNumbers, vectorSize);
         printVector (tenNumbers, vectorSize);
         System.out.println("A média dos números digitados é: "+average (tenNumbers, sum, vectorSize));
-
     }
 
     public static void fillsVector (int tenNumbers[], int vectorSize ){
@@ -27,17 +26,14 @@ public class exer2cap3 {
         Scanner sc = new Scanner(System.in);
         for (int index = 0; index < vectorSize; index++){
             System.out.println("Posição ["+index+"] = "+tenNumbers[index]);
-
         }
     }
 
     public static double average (int tenNumbers[], int sum, int vectorSize ){
         for (int index = 0; index < vectorSize; index++){
             sum += tenNumbers[index];
-
         }
         double average = sum / vectorSize;
         return average;
     }
 }
-

@@ -10,10 +10,7 @@ public class exer7cap2 {
             } else {
                 multiplica *= i;
                 System.out.println("Multiplicação["+ i +"] = "+ multiplica);
-
             }
-
-
         }
     }
 }
