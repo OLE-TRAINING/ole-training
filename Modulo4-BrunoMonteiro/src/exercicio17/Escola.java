@@ -34,6 +34,7 @@ public class Escola {
 		return false;
 	}
 
+	// criei todos esses boolean porque achei que ficaria mais fácil de ler e entender o método
 	public boolean trocarAlunoDeSala(Aluno aluno, SalaDeAula salaAntiga, SalaDeAula salaNova) {
 		boolean salaAntigaExiste = verificarExistenciaDaSalaNaEscola(salaAntiga.getIdSalaDeAula());
 

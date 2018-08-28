@@ -11,5 +11,4 @@ public class InstanciandoPessoas {
 		p1.imprimeDados();
 		p2.imprimeDados();
 	}
-
 }
