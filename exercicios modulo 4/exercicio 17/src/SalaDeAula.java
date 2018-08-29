@@ -26,11 +26,7 @@ public class SalaDeAula {
 			System.out.println("Nao foi possivel adicionar o aluno na Turma pois ela está cheia!!");
 		} else {
 			alunos.add(aluno);
-			if (alunos.contains(aluno)) {
-				System.out.println("Aluno adicionado na Turma com sucesso!!");
-			} else {
-				System.out.println("Aluno nao adicionado na turma.. existe algum problema no sistema!!");
-			}
+			System.out.println("Aluno adicionado na Turma com sucesso!!");
 		}
 	}
 
@@ -43,10 +39,7 @@ public class SalaDeAula {
 	}
 
 	public boolean isMax(ArrayList<Pessoa> classe) {
-		if (classe.size() == 10) {
-			return true;
-		}
-		return false;
+			return classe.size() == 10;
 	}
 
 }

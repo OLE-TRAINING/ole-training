@@ -4,25 +4,40 @@ public class Escola {
 	private String nome;
 	private String cnpj;
 	private ArrayList<SalaDeAula> salas = new ArrayList<>();
-
-	public void adicionaAluno(SalaDeAula sala) {
+	
+	// getters
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public String getCnpj() {
+		return this.cnpj;
+	}
+    
+	public ArrayList<SalaDeAula> getSalas(){
+		return this.salas;
+	}
+	//setters
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+    
+	//demias metodos
+	public void adicionaSala(SalaDeAula sala) {
 		if (isMax(salas)) {
 			System.out.println("Nao foi possivel adicionar a sala na escola pois ela está cheia!!");
 		} else {
 			salas.add(sala);
-			if (salas.contains(sala)) {
-				System.out.println("Sala adicionada na Escola com sucesso!!");
-			} else {
-				System.out.println("Sala nao adicionado na escola.. existe algum problema no sistema!!");
-			}
+			System.out.println("Sala adicionada na Escola com sucesso!!");
 		}
 	}
 
 	public boolean isMax(ArrayList<SalaDeAula> todasSala) {
-		if (todasSala.size() == 20) {
-			return true;
-		}
-		return false;
+		return todasSala.size() >= 20;
 	}
 
 	public void moverAlunoDeUmaSalaParaOutrA(Pessoa aluno, SalaDeAula salaA) {
