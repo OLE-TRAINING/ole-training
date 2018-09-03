@@ -4,7 +4,7 @@ public class Asteriscos {
 	
 	public static void main(String args[]) {
 		
-		int asteriscos = 10;
+		int asteriscos = 17;
 		
 		for(int i = 0; i <= asteriscos; i++) {
 			for(int j = 0; j < i; j++)
