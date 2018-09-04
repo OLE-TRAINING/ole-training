@@ -43,7 +43,7 @@ public class Execute {
 				System.out.println("November");
 				break;
 			case 12:
-				System.out.println("December");
+				System.out.println("Decenber");
 				break;
 			default:
 				System.out.println("O valor nao corresponde a um mes!!");
