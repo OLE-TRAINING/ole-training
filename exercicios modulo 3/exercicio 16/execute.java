@@ -1,4 +1,4 @@
-public class execute {
+public class Execute {
 
 	public static void main(String[] args) {
 
@@ -8,24 +8,24 @@ public class execute {
 		int auxIndex;
 
 		for (int element = 9; element >= -1; element--) {
+
 			if (element < 9) {
 				vet2[element + 1] = aux;
 			}
 
 			aux = vet[0];
 			auxIndex = 0;
-
-			for (int i = 0; i <= element; i++) {
-				if (aux < vet[i]) {
-					aux = vet[i];
-					auxIndex = i;
+			for (int index = 0; index <= element; index++) {
+				if (aux < vet[index]) {
+					aux = vet[index];
+					auxIndex = index;
 				}
 			}
 
 			if (element > 0) {
 
 				vet[auxIndex] = vet[element];
-				vet[element] = 0;// "delete no elemento"
+				vet[element] = 0;// delete in element
 			} else {
 				vet[0] = 0;
 			}
@@ -39,14 +39,16 @@ public class execute {
 
 	public static void showVets(int vet[], int vet2[], int size) {
 		System.out.print("\n--------------------------------\nV=");
+		showVet(vet, size);
+		System.out.print("\nV2=");
+		showVet(vet2, size);
+		System.out.println("\n--------------------------------\n");
+
+	}
+
+	public static void showVet(int vet[], int size) {
 		for (int element = 0; element < size; element++) {
 			System.out.print(" " + vet[element]);
 		}
-		System.out.print("\nV2=");
-		for (int element = 0; element < size; element++) {
-			System.out.print(" " + vet2[element]);
-		}
-		System.out.println("\n--------------------------------\n");
-
 	}
 }
