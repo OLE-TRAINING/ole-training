@@ -4,8 +4,9 @@ import exercicios5a7.exercicios8a11.Comissao;
 
 public class FuncionarioSemEstudo extends Funcionario {
 
-	public FuncionarioSemEstudo(Comissao comissao) {
+	public FuncionarioSemEstudo(Comissao comissao, int codigoFuncional, String nome) {
 		super(comissao);
-		setRenda(1000);
+		setNome(nome);
+		setCodigoFuncional(codigoFuncional);
 	}
 }

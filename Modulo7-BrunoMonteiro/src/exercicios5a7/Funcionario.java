@@ -1,20 +1,57 @@
 package exercicios5a7;
 
 import exercicios5a7.exercicios8a11.Comissao;
+import exercicios5a7.renda.*;
 
-public abstract class Funcionario {
+public class Funcionario {
 
-	private String nome;
-	private int codigo;
-	private double renda;
 	private Comissao comissao;
+	private Renda renda;
+	private int codigoFuncional;
+	private String nome;
+	private String escolaEnsinoBasico;
+	private String escolaEnsinoMedio;
+	private String universidade;
 	
 	public Funcionario(Comissao comissao) {
-		setComissao(comissao);
+		this.comissao = comissao;
+		this.renda = new RendaBasica();
+	}
+	
+	public int getCodigoFuncional() {
+		return codigoFuncional;
+	}
+
+	public void setCodigoFuncional(int codigoFuncional) {
+		this.codigoFuncional = codigoFuncional;
+	}
+
+	public String getEscolaEnsinoBasico() {
+		return escolaEnsinoBasico;
+	}
+
+	public void setEscolaEnsinoBasico(String escolaEnsinoBasico) {
+		this.escolaEnsinoBasico = escolaEnsinoBasico;
+	}
+
+	public String getEscolaEnsinoMedio() {
+		return escolaEnsinoMedio;
+	}
+
+	public void setEscolaEnsinoMedio(String escolaEnsinoMedio) {
+		this.escolaEnsinoMedio = escolaEnsinoMedio;
+	}
+
+	public String getUniversidade() {
+		return universidade;
+	}
+
+	public void setUniversidade(String universidade) {
+		this.universidade = universidade;
 	}
 	
 	public double getRendaTotal() {
-		return getRenda() + comissao.getComissao();
+		return renda.getValorRenda() + comissao.getComissao();
 	}
 	
 	public Comissao getComissao() {
@@ -25,11 +62,11 @@ public abstract class Funcionario {
 		this.comissao = comissao;
 	}
 	
-	public void setRenda(double renda) {
+	public void setRenda(Renda renda) {
 		this.renda = renda;
 	}
 	
-	public double getRenda() {
+	public Renda getRenda() {
 		return this.renda;
 	}
 	

@@ -3,18 +3,30 @@ package exercicios1a4;
 public class TestandoAnimais {
 
 	public static void main(String[] args) {
-		/*Animal animal = AnimalFactory.getAnimal("preguiça", "rex", 3);
+		// Exercício 2
+		AnimalFactory.getAnimal("cachorro", "rex", 10).emitirSom();
+		AnimalFactory.getAnimal("cavalo", "ponga", 10).emitirSom();
+		AnimalFactory.getAnimal("preguica", "preguica", 10).emitirSom();
 		
-		if (animal != null) {
-			animal.emitirSom();
-		} else {
-			System.out.println("Animal requisitado não existe!");
-		}
+		// Exercício 3
+		Veterinario vet = new Veterinario();
+		vet.examinar(AnimalFactory.getAnimal("cachorro", "bobby", 14));
 		
-		Veterinario veterinario = new Veterinario();
-		veterinario.examinar(new Cachorro("dog", 10));*/
-		
+		// Exercício 4
 		Zoologico zoologico = new Zoologico();
+		preenchendoJaulas(zoologico);
 		zoologico.percorrendoJaulas();
+	}
+	
+	public static void preenchendoJaulas(Zoologico zoo) {
+		String animais[] = {"cavalo", "cachorro", "cachorro", "cachorro", 
+				"preguica", "cavalo", "cavalo", "cachorro", "preguica", "preguica"};
+		
+		Jaula jaulas[] = new Jaula[10];
+		for (int i = 0; i < 10; i++) {
+			jaulas[i] = new Jaula();
+			jaulas[i].addAnimal(AnimalFactory.getAnimal(animais[i], "", 5));
+		}
+		zoo.setJaulas(jaulas);
 	}
 }
