@@ -1,41 +1,34 @@
 import java.util.Scanner;
-public class execute {
+
+public class Execute {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		
-		if(n<0)
-		{
-			n*=-1;
-			ehPrimo(n);
+		int valor = s.nextInt();
+
+		if (valor < 0) {
+			valor *= -1;
+			ehPrimo(valor);
+		} else {
+			ehPrimo(valor);
 		}
-		else
-		 ehPrimo(n);
-		
-		
+
 	}
-	
-	
-	public static void ehPrimo(int n)
-	{
-		int flag=0;
-		for(int i=2;i<n;i++)
-		{
-			if(n%i==0)
-			{
-				System.out.print("Divisivel por:"+i);
-				flag=1;
+
+	public static void ehPrimo(int valor) {
+		Boolean flag = false;
+		for (int numero = 2; numero < valor; numero++) {
+			if (valor % numero == 0) {
+				System.out.print("Divisivel por:" + numero);
+				flag = true;
 				break;
 			}
 		}
-		
-		if(flag==1 ||  n==0)	
-		System.out.println(" portanto NAO eh PRIMO");
-		else
-		{	
-				System.out.println("eh PRIMO");
+
+		if (flag || valor == 0)
+			System.out.println(" portanto NAO eh PRIMO");
+		else {
+			System.out.println("eh PRIMO");
 		}
 	}
-
 }

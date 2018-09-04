@@ -22,7 +22,7 @@ public class Execute {
 
 		for (int row = 0; row < h + 1; row++) {
 
-			writeRowType1(row);
+			writeLeftToRight(row);
 
 			System.out.println();
 		}
@@ -32,13 +32,13 @@ public class Execute {
 
 		for (int row = height; row != 0; row--) {
 
-			writeRowType1(row);
+			writeLeftToRight(row);
 
 			System.out.println();
 		}
 	}
 
-	public static void writeRowType1(int row) {
+	public static void writeLeftToRight(int row) {
 		for (int column = 0; column < row; column++) {
 			System.out.print("*");
 		}
@@ -50,13 +50,13 @@ public class Execute {
 
 		for (int row = 0; row < height; row++) {
 
-			writeRowType3(row, height);
+			writeRowInBlankFirst(row, height);
 
 			System.out.println();
 		}
 	}
 
-	public static void writeRowType3(int row, int height) {
+	public static void writeRowInBlankFirst(int row, int height) {
 		for (int column = height - 1; column >= 0; column--) {
 			if (column > row) {
 				System.out.print(" ");
@@ -69,13 +69,13 @@ public class Execute {
 	public static void writeForm4(int height) {
 
 		for (int row = 0; row < height; row++) {
-			writeRowType4(row, height);
+			writeRowStarsFirst(row, height);
 
 			System.out.println();
 		}
 	}
 
-	public static void writeRowType4(int row, int height) {
+	public static void writeRowStarsFirst(int row, int height) {
 		for (int column = 0; column < height; column++) {
 			if (column >= row) {
 				System.out.print("*");

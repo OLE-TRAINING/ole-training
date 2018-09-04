@@ -1,16 +1,16 @@
-public class execute {
+public class Execute {
 
 	public static void main(String[] args) {
-		int inp=0;
-		float par=1;
+		int somaImpares = 0;
+		float multiplicaçaoPares = 1;
 		// numeros 1 e 30 nao considerados
-		for(int x=2;x<30;x++){
-			if(x%2!=0){
-			inp+=x;	
-			}else {
-				par*=x;
+		for (int number = 2; number < 30; number++) {
+			if (number % 2 != 0) {
+				somaImpares += number;
+			} else {
+				multiplicaçaoPares *= number;
 			}
 		}
-			System.out.println("Soma dos Impares:"+inp+"\nMultiplicaçao dos pares:"+par); 
+		System.out.println("Soma dos Impares:" + somaImpares + "\nMultiplicaçao dos pares:" + multiplicaçaoPares);
 	}
 }
