@@ -7,8 +7,8 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 	
 	public ContaCorrenteEspecial(double saldoTotal, double limiteExtra) {
 		super(saldoTotal);
-		setLimiteDefinido(limiteExtra);
-		setLimiteCorrente(limiteExtra);
+		this.limiteDefinido = limiteExtra;
+		this.limiteCorrente = limiteExtra;
 	}
 
 	public double getLimiteDefinido() {
@@ -34,19 +34,19 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 			if (valor > getSaldoTotal() + getLimiteCorrente()) {
 				throw new IllegalArgumentException("Valor pedido excede saldo e limite extra!");
 			} else {
-				setLimiteCorrente(getLimiteCorrente() + (getSaldoTotal() - valor));
+				this.limiteCorrente += (getSaldoTotal() - valor);
 				setSaldoTotal(0);
 			}
 		}
 	}
 	
 	public void depositar(double valor) {
-		if (getLimiteCorrente() < getLimiteDefinido()) {
-			setLimiteCorrente(getLimiteCorrente() + valor);
+		if (this.limiteCorrente < this.limiteDefinido) {
+			this.limiteCorrente += valor;
 			
 			if (getLimiteCorrente() > getLimiteDefinido()) {
-				valor = getLimiteCorrente() - getLimiteDefinido();
-				setLimiteCorrente(getLimiteDefinido());
+				valor = this.limiteCorrente - this.limiteDefinido;
+				this.limiteCorrente = this.limiteDefinido;
 				super.depositar(valor);
 			}
 		}

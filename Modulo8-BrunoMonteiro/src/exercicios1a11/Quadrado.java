@@ -3,7 +3,7 @@ package exercicios1a11;
 public class Quadrado extends Quadrilatero {
 
 	public Quadrado(int lado) {
-		if (lado < 0) {
+		if (lado <= 0) {
 			throw new IllegalArgumentException("Valor inválido, os valores esperados são maior que 0.");
 		} else {
 			setLado1(lado);

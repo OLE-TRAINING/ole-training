@@ -3,7 +3,7 @@ package exercicios1a11;
 public class Retangulo extends Quadrilatero {
 
 	public Retangulo(int base, int altura) {
-		if (base < 0 || altura < 0) {
+		if (base <= 0 || altura <= 0) {
 			throw new IllegalArgumentException("Valor inválido, os valores esperados são maior que 0."); 
 		} else if (base == altura) {
 			throw new IllegalArgumentException("Valor inválido, modifique um dos valores a fim de torná-los diferente."); 

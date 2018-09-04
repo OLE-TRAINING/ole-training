@@ -5,7 +5,7 @@ public abstract class ContaCorrente {
 	private double saldoTotal;
 	
 	public ContaCorrente(double saldoTotal) {
-		setSaldoTotal(saldoTotal);
+		this.saldoTotal = saldoTotal;
 	}
 	
 	public double getSaldoTotal() {
@@ -25,6 +25,6 @@ public abstract class ContaCorrente {
 	}
 	
 	public void depositar(double valor) {
-		setSaldoTotal(getSaldoTotal() + valor);
+		this.saldoTotal += valor;
 	}
 }
