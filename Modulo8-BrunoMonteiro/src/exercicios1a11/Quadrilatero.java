@@ -12,10 +12,10 @@ public abstract class Quadrilatero implements FiguraGeometrica {
 	}
 
 	public Quadrilatero(int lado1, int lado2, int lado3, int lado4) {
-		setLado1(lado1);
-		setLado2(lado2);
-		setLado3(lado3);
-		setLado4(lado4);
+		this.lado1 = lado1;
+		this.lado2 = lado2;
+		this.lado3 = lado3;
+		this.lado4 = lado4;
 	}
 	
 	public int getLado1() {

@@ -31,7 +31,7 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 		try {
 			super.sacar(valor);
 		} catch (IllegalArgumentException e) {
-			if (valor > getSaldoTotal() + getLimiteCorrente()) {
+			if (valor > getSaldoTotal() + this.limiteCorrente) {
 				throw new IllegalArgumentException("Valor pedido excede saldo e limite extra!");
 			} else {
 				this.limiteCorrente += (getSaldoTotal() - valor);
