@@ -13,8 +13,4 @@ public class Jaula {
 	public ArrayList<Animal> getAnimais() {
 		return animais;
 	}
-	
-	public void a() {
-		System.out.println("AAAAAAAAAAA");
-	}
 }
