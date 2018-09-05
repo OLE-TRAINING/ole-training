@@ -1,0 +1,3 @@
+porque um set nao aceita elementos duplicados entao dessa forma ao dar os comandos:
+hashSet.add(100); e hashSet.add(200);  de forma repetida acaba nao tendo efeitos 
+entao a contagem de elementos é menor alterando assim o valor da media
