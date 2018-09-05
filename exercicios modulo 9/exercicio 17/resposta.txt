@@ -1,0 +1,1 @@
+set pois nao aceita duplicatas e a chave deve ser gerada de uma forma parecida com o que o hashcode funciona. por exemplo a matricula pode ser uma chave e ela segue uma logica para sua criaçao como um numero que identifica o ano da sua criaçao por exemplo.
