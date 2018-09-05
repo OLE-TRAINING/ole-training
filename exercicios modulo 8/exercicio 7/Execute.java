@@ -16,5 +16,4 @@ public class Execute {
 		System.out.println("Area=" + figura.calcularArea());
 		System.out.println("Perimetro=" + figura.calcularPerimetro());
 	}
-
 }

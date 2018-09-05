@@ -24,19 +24,19 @@ public class Quadrado extends Quadrilatero {
 	}
 
 	private void quadradoVerificaEseta(int lado, int lado2) {
-		String mensagem="aaa";
+		String mensagem = "aaa";
 		try {
-			if (lado <= 0 || lado2<=0) {
-				mensagem="Era esperado um valor maior que 0";
+			if (lado <= 0 || lado2 <= 0) {
+				mensagem = "Era esperado um valor maior que 0";
 				throw new IllegalArgumentException();
-			} else if(lado!=lado2){
-				mensagem="os valores nao corespondem a um quadrado";
+			} else if (lado != lado2) {
+				mensagem = "os valores nao corespondem a um quadrado";
 				throw new IllegalArgumentException();
 			} else {
 				setValorUm(lado);
 				setValorDois(lado2);
 			}
-		}catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			JOptionPane.showMessageDialog(null, mensagem);
 			System.exit(1);
 		}

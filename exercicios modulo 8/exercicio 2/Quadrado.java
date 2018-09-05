@@ -1,8 +1,8 @@
-public class Quadrado extends Quadrilatero{
+public class Quadrado extends Quadrilatero {
 	private int lado;
-	
+
 	public Quadrado(int lado) {
-		super(lado,lado,lado,lado);
-		this.lado=lado;
+		super(lado, lado, lado, lado);
+		this.lado = lado;
 	}
 }

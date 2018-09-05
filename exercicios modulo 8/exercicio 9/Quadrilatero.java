@@ -1,10 +1,8 @@
-
 public abstract class Quadrilatero implements FiguraGeometrica {
 	private int valorUm;
 	private int valorDois;
 
 	public Quadrilatero() {
-
 	}
 
 	public Quadrilatero(int lado) {
@@ -17,7 +15,6 @@ public abstract class Quadrilatero implements FiguraGeometrica {
 		this.valorDois = lado2;
 	}
 
-	// getters
 	public int getValorUm() {
 		return this.valorUm;
 	}
@@ -26,7 +23,6 @@ public abstract class Quadrilatero implements FiguraGeometrica {
 		return this.valorDois;
 	}
 
-	// setters
 	public void setValorUm(int valor) {
 		this.valorUm = valor;
 	}
@@ -34,6 +30,4 @@ public abstract class Quadrilatero implements FiguraGeometrica {
 	public void setValorDois(int valor) {
 		this.valorDois = valor;
 	}
-
-	// demais metodos(abstratos) \/
 }
