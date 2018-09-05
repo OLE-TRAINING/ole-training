@@ -1,31 +1,29 @@
 import java.util.Calendar;
 
 public class VerificaDatas {
-	
-	
+
 	public void verificaDatas(Calendar data1, Calendar data2) {
 		long d1 = data1.getTimeInMillis();
 		long d2 = data2.getTimeInMillis();
 		long diferença;
-		if(d1==d2) {
+
+		if (d1 == d2) {
 			System.out.println("As datas são iguais!!");
-			diferença=0;
-		}else if(d1>d2) {
+			diferença = 0;
+		} else if (d1 > d2) {
 			mostrarData(data1);
-			diferença=d1-d2;
+			diferença = d1 - d2;
 		} else {
 			mostrarData(data2);
-			diferença=d2-d1;
+			diferença = d2 - d1;
 		}
-		
-		
-		//1 dia = 86400000 milisegundos
-		if(((double)diferença/86400000)>20.0) {
+
+		// 1 dia = 86400000 milisegundos
+		if (((double) diferença / 86400000) > 20.0) {
 			System.out.println("A diferença é acima de 20 dias");
 		}
-		
 	}
-	
+
 	public void mostrarData(Calendar data) {
 		System.out.println("Maior data:");
 		System.out.println("Ano : " + data.get(Calendar.YEAR));

@@ -11,14 +11,13 @@ public class VerificaString {
 	}
 
 	public void checkString(String str) {
-	    String auxiliar = str;
-	    
-		
-	    if (auxiliar.length() < 8) {
-			System.out.println("Erro: string "+str+" com menos de 8 caracteres!!!");
+		String auxiliar = str;
+
+		if (auxiliar.length() < 8) {
+			System.out.println("Erro: string " + str + " com menos de 8 caracteres!!");
 		}
 
-		if (!(str.charAt(0)=='A')) {
+		if (!(str.charAt(0) == 'A')) {
 			System.out.println("Erro: string nao começa com A");
 		}
 	}
