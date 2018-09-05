@@ -1,10 +1,8 @@
-
 public class Animal {
 	private String nome;
 	private int idade;
 	private String som;
 	
-	//getters
 	public String getNome() {
 		return this.nome;
 	}
@@ -17,7 +15,6 @@ public class Animal {
 		return this.som;
 	}
 	
-	//setters
 	public void setNome(String nome) {
 		this.nome=nome;
 	}
@@ -30,10 +27,8 @@ public class Animal {
 		this.som=som;
 	}
 	
-	public void showYourself() {
-		System.out.println("Nome:"+nome);
-		System.out.println("Idade:"+idade);
-		System.out.println("Som:"+som);
+	public String toString() {
+		return "\nNome:" + this.nome + "\nIdade:" + this.idade + "\nSom:" + this.som;
 	}
 	
 	public void fazerBarulho() {

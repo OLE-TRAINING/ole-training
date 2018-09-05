@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Empresa {
 	private ArrayList<Funcionario> empregados = new ArrayList<Funcionario>();
 
-	// getters
 	public ArrayList<Funcionario> getFuncionarios() {
 		return this.empregados;
 	}

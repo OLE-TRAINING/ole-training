@@ -1,4 +1,3 @@
-
 public class Gerente extends Funcionario {
 	public Gerente(int n) {
 		super.setNome(Integer.toString(n));

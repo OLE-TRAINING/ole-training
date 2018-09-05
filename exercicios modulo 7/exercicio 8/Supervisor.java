@@ -1,6 +1,5 @@
-
-public class Supervisor extends Funcionario{
+public class Supervisor extends Funcionario {
 	public float salario() {
-		return (super.salario()+600);
+		return (super.salario() + 600);
 	}
 }

@@ -18,7 +18,7 @@ public class Empresa {
 			} else if ((i >= (n * (7.0 / 10)) && (i < (n * (9.0 / 10))))) {
 				empregados.add(new Supervisor());
 				System.out.println("Funcionario Supervisor criado");
-			} else if((i >= (n * (9.0 / 10)) && (i < n))){
+			} else if ((i >= (n * (9.0 / 10)) && (i < n))) {
 				empregados.add(new Gerente());
 				System.out.println("Funcionario Gerente criado");
 			}

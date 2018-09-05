@@ -1,6 +1,5 @@
-
-public class Vendedor extends Funcionario{
+public class Vendedor extends Funcionario {
 	public float salario() {
-		return (super.salario()+250);
+		return (super.salario() + 250);
 	}
 }
