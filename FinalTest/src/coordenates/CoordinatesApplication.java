@@ -12,11 +12,6 @@ public class CoordinatesApplication {
 		Plateau plateau = new Plateau(scanner.nextInt(), scanner.nextInt());
 		Rover rover;
 		String instructions;
-	
-		scanner = new Scanner(System.in); // clears the buffer
-		
-		// since the exercise didn't specify how many rover there would be, entering a blank space on the next
-		// rover breaks the while loop
 		
 		char nextRover = 'y';
 		while (nextRover == 'y') {
