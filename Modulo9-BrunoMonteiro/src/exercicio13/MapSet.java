@@ -6,24 +6,20 @@ import java.util.HashSet;
 public class MapSet {
 
 	public static void main(String[] args) {
-		HashMap<Integer, Aluno> hashmap = new HashMap<Integer, Aluno>();
+		HashMap<Integer, Aluno> hashmap = new HashMap<>();
 		HashSet<Aluno> hashset = new HashSet<Aluno>();
 
 		inserirAlunosHashMap(hashmap);
 		inserirAlunosHashSet(hashset);
 		
 		long inicio = System.currentTimeMillis();
-		for (int i = 0; i < 3000000; i++) { // fiz esse for porque só uma vez sempre é 0ms
-			pesquisarAlunoHashMap(hashmap, 15000);
-		}
+		pesquisarAlunoHashMap(hashmap, 15000);
 		long fim = System.currentTimeMillis();
 		System.out.println("Pesquisa em map: " + (fim - inicio) + "ms");
 		
 		Aluno aluno = new Aluno(15000, "aaa", 5);
 		inicio = System.currentTimeMillis();
-		for (int i = 0; i < 3000000; i++) {
-			pesquisarAlunoHashSet(hashset, aluno);
-		}
+		pesquisarAlunoHashSet(hashset, aluno);
 		fim = System.currentTimeMillis();
 		System.out.println("Pesquisa em set: " + (fim - inicio) + "ms");
 	}
