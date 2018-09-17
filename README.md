@@ -18,6 +18,7 @@ After development is completed, a pull request by github should be opened for pr
 <br>
 All exercises below should be done using a maven project. <br>
 The resolution of the exercises of each topic should be well organized. <br>
+Unit tests for exercise should be developed. <br>
 
 ### API Java Time
 
