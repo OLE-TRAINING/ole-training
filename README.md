@@ -20,6 +20,7 @@ All exercises below should be done using a maven project. <br>
 The resolution of the exercises of each topic should be well organized. <br>
 
 ### API Java Time
+
 <br>
 	**1** - Display the current date using the classes in this api. <br>
 	**2** - convert a string in the dd /MM/yyyy pattern to a date object. <br>
@@ -28,21 +29,27 @@ The resolution of the exercises of each topic should be well organized. <br>
 	**5** - Recover the next month from any date. <br>
 	**6** - Add 10 days on any date and print the difference. <br>
 <br>
+
 ### BigDecimal
+
 <br>
 	**1** - Declare a number and print. <br>
 	**2** - Reverse the sign of a number. <br>
 	**3** - Compare three numbers and print the largest and smallest. <br>
 	**4** - Create a calculator, add, subtract, divide and multiply. <br>
 <br>
+
 ### API Gson
+
 <br>
 	**1** - Create the Person object that will have the attributes, name (type character), id (type numerical), salary (type decimal), registrationDate (type date). <br>
 	**2** - Instantiate the Person object and convert it to a json and print the same. <br>
 	**3** - Do the reverse process of Exercise 2. <br>
 	**4** - Same process as Exercise 2, plus omit json id attribute. <br>
 <br>
+
 ### Client Http
+
 <br>
 	**1** - Studying over HTTP protocol. <br>
 	**2** - Create a poc and use some api, library or framework that makes http requests. <br>
@@ -53,7 +60,6 @@ The resolution of the exercises of each topic should be well organized. <br>
 	**7** - Call a service that updates only some information from a Person (No need to persist anywhere, just represent a call that does this). <br>
 	**8** - Call a service that deletes a Person. <br>
 	**9** - Call a service to return an HTTP error and throw a new exception according to the name of the received code status. <br>
-<br>
 <br>
 
 ## Android Specific Exercices
