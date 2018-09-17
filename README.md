@@ -21,46 +21,58 @@ The resolution of the exercises of each topic should be well organized. <br>
 
 ### API Java Time
 
-<br>
-	**1** - Display the current date using the classes in this api. <br>
-	**2** - convert a string in the dd /MM/yyyy pattern to a date object. <br>
-	**3** - Do the reverse process of Exercise 2. <br>
-	**4** - Convert a string with a GMT-3 time zone date to a date object. <br>
-	**5** - Recover the next month from any date. <br>
-	**6** - Add 10 days on any date and print the difference. <br>
-<br>
+</br>
+
+**1** - Display the current date using the classes in this api. <br>
+**2** - convert a string in the dd /MM/yyyy pattern to a date object. <br>
+**3** - Do the reverse process of Exercise 2. <br>
+**4** - Convert a string with a GMT-3 time zone date to a date object. <br>
+**5** - Recover the next month from any date. <br>
+**6** - Add 10 days on any date and print the difference. <br>
 
 ### BigDecimal
 
-<br>
-	**1** - Declare a number and print. <br>
-	**2** - Reverse the sign of a number. <br>
-	**3** - Compare three numbers and print the largest and smallest. <br>
-	**4** - Create a calculator, add, subtract, divide and multiply. <br>
-<br>
+</br>
+
+**1** - Declare a number and print. <br>
+**2** - Reverse the sign of a number. <br>
+**3** - Compare three numbers and print the largest and smallest. <br>
+**4** - Create a calculator, add, subtract, divide and multiply. <br>
 
 ### API Gson
 
-<br>
-	**1** - Create the Person object that will have the attributes, name (type character), id (type numerical), salary (type decimal), registrationDate (type date). <br>
-	**2** - Instantiate the Person object and convert it to a json and print the same. <br>
-	**3** - Do the reverse process of Exercise 2. <br>
-	**4** - Same process as Exercise 2, plus omit json id attribute. <br>
-<br>
+</br>
+
+**1** - Create the Person object that will have the attributes, name (type character), id (type numerical), salary (type decimal), registrationDate (type date). <br>
+**2** - Instantiate the Person object and convert it to a json and print the same. <br>
+**3** - Do the reverse process of Exercise 2. <br>
+**4** - Same process as Exercise 2, plus omit json id attribute. <br>
+	
+
+### Reflection
+
+</br>
+
+**1** - Study Java Reflection. <br>
+**2** - List all attributes of the person object using reflection. <br>
+**3** - Print if the name attribute of the Person object contains value. <br>
+**4** - Create a class named ErrorResponse with the attributes, id (type character), message (type character). <br>
+**5** - Create a structure to validate if the attributes of the person object are null. For each null attribute, create an ErrorResponse object and then throw a created exception to display the validation errors. <br>
+**6** - Create a class called MethodReflection, and add several methods to it, each with a different signature and different parameters. Finally, execute and list all methods of the class using Reflection. <br>
 
 ### Client Http
 
-<br>
-	**1** - Studying over HTTP protocol. <br>
-	**2** - Create a poc and use some api, library or framework that makes http requests. <br>
-	**3** - Use some http call generator (Mocky io, Mock Bin, MockAPI) to run the tests below. <br>
-	**4** - Call a service to return a Person list (object created in the previous theme), containing three items. <br>
-	**5** - Call a service that saves a Person and expects the http status that is generated when creating a resource (You will not need to persist anywhere, just represent a call that does this). <br>
-	**6** - Call a service that updates a Person (No need to persist anywhere, just represent a call that does this operation). <br>
-	**7** - Call a service that updates only some information from a Person (No need to persist anywhere, just represent a call that does this). <br>
-	**8** - Call a service that deletes a Person. <br>
-	**9** - Call a service to return an HTTP error and throw a new exception according to the name of the received code status. <br>
-<br>
+</br>
+
+**1** - Studying over HTTP protocol. <br>
+**2** - Create a poc and use some api, library or framework that makes http requests. <br>
+**3** - Use some http call generator (Mocky io, Mock Bin, MockAPI) to run the tests below. <br>
+**4** - Call a service to return a Person list (object created in the previous theme), containing three items. <br>
+**5** - Call a service that saves a Person and expects the http status that is generated when creating a resource (You will not need to persist anywhere, just represent a call that does this). <br>
+**6** - Call a service that updates a Person (No need to persist anywhere, just represent a call that does this operation). <br>
+**7** - Call a service that updates only some information from a Person (No need to persist anywhere, just represent a call that does this). <br>
+**8** - Call a service that deletes a Person. <br>
+**9** - Call a service to return an HTTP error and throw a new exception according to the name of the received code status. <br>
 
 ## Android Specific Exercices
 
