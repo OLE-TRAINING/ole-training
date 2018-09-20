@@ -8,6 +8,7 @@
 log/
 bin/
 target/
+log4j/
 *.jar
 *.log
 *.versionsBackup
