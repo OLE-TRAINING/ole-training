@@ -46,21 +46,21 @@ public class BigDecimalExerciseTest {
 	@Test
 	public void testGetSmallestNumberFirstNumberIsTheSmallest() {
 		assertEquals(new BigDecimal("1"),
-				BigDecimalExercise.getSmallestNumber(new BigDecimal("3"), 
-						new BigDecimal("2"), new BigDecimal("1")));
+				BigDecimalExercise.getSmallestNumber(new BigDecimal("1"), 
+						new BigDecimal("2"), new BigDecimal("3")));
 	}
 	
 	@Test
 	public void testGetSmallestNumberSecondNumberIsTheSmallest() {
 		assertEquals(new BigDecimal("1"),
 				BigDecimalExercise.getSmallestNumber(new BigDecimal("2"), 
-						new BigDecimal("3"), new BigDecimal("1")));
+						new BigDecimal("1"), new BigDecimal("3")));
 	}
 	
 	@Test
 	public void testGetSmallestNumberThirdNumberIsTheSmallest() {
 		assertEquals(new BigDecimal("1"),
 				BigDecimalExercise.getSmallestNumber(new BigDecimal("2"), 
-						new BigDecimal("1"), new BigDecimal("3")));
+						new BigDecimal("3"), new BigDecimal("1")));
 	}
 }
