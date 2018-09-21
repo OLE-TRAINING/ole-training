@@ -7,6 +7,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class APIJavaTime {
+	
+	private APIJavaTime() {}
 
 	public static DateTimeFormatter getCorrespondentDateFormat(String dateFormatType) {
 		return DateTimeFormatter.ofPattern(dateFormatType);
