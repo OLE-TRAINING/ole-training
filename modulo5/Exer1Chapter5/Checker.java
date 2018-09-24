@@ -4,65 +4,61 @@ import java.util.Calendar;
 
 public class Checker {
 
-    public static void checkCharacters(String word) {
-        if (word.length() > 8) {
+    public static void checkWordLength(String word, int MAX_LENGTH_WORD) {
+        if(word == null){
+            System.out.println("Erro: String vazia.");
+        }
+        if (word.length() > MAX_LENGTH_WORD) {
             System.out.println("Você ultrapassou o limite de caracteres.");
         }
     }
 
-    public static void checkFirstCharacters(String word) {
-        if (word.charAt(0) == 'A') {
-            System.out.println("Primeiro caractere válido!");
-        } else {
-            System.out.println("Primeiro caractere inválido!");
+    public static void checkStartWith(String word, char FIRST_CHARACTER) {
+        if(word == null){
+            System.out.println("Erro: String vazia.");
         }
+        System.out.println(word.charAt(0) == FIRST_CHARACTER ? "Primeiro caractere válido." : "Primeiro caractere inválido.");
     }
 
     public static String return4Characters(String word) {
+        if(word == null){
+            System.out.println("Erro: String vazia.");
+        }
         word = word.toUpperCase().substring(0, 4);
         return word;
     }
 
     public static void containNumber(String word) {
-        int counter = 0;
+        if(word == null){
+            System.out.println("Erro: String vazia.");
+        }
+        boolean hasNumber = false;
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) >= 48 && word.charAt(i) <= 57) {
-                counter++;
+            if (word.charAt(i) >= '0' && word.charAt(i) <= '9') {
+                hasNumber = true;
+                break;
             }
         }
-        if (counter > 0) {
-            System.out.println("Tem número.");
-        } else {
-            System.out.println("Não tem número.");
-        }
+        System.out.println(hasNumber ? "Tem Número." : "Não tem número.");
     }
 
     public static void whichIsTheBigger(int number, int number2) {
-        if (number > number2) {
-            System.out.println("O número " + number + " é o maior.");
-        } else {
-            System.out.println("O número " + number2 + " é o maior.");
-        }
+        System.out.println(number > number2 ? "O número " + number + " é o maior." : "O número " + number2 + " é o maior.");
     }
 
     public static void howMuchTimeLeft(Calendar now, Calendar event) {
-        long finalDate = event.getTimeInMillis();
-        long inicialDate = now.getTimeInMillis();
-        long totalMilliseconds = (finalDate - inicialDate);
-        long totalSeconds = totalMilliseconds / 1000;
-        long segundos = (((((totalSeconds % 31536000) % 2628000) % 86400) % 3600) % 60);
-        long minutos = ((((totalSeconds % 31536000) % 2628000) % 86400) % 3600) / 60;
-        long horas = (((totalSeconds % 31536000) % 2628000) % 86400) / 3600;
-        long dias = ((totalSeconds % 31536000) % 2628000) / 86400;
-        long mes = (totalSeconds % 31536000) / 2628000;
-        long ano = totalSeconds / 31536000;
-        System.out.println("Falta(m) " + ano + " ano(s), " + mes + " mes(es), " + dias + " dia(s), " + horas + " hora(s), "
-                + minutos + " minuto(s) e " + segundos + " segundo(s) para o seu evento.");
+        if(now == null || event ==null){
+            System.out.println("Erro: Datas vazia.");
+        }
+        MillisecondsCoverter.diferenceInDetails(now,event);
     }
 
     public static Calendar whichIsTheBiggerDate(Calendar date1, Calendar date2) {
-        if (((date1.getTimeInMillis() - date2.getTimeInMillis()) > 1728000000 )
-                || ((date2.getTimeInMillis() - date1.getTimeInMillis()) > 1728000000)) {
+        if(date1 == null || date2 ==null){
+            System.out.println("Erro: Datas vazia.");
+        }
+        if (((date1.getTimeInMillis() - date2.getTimeInMillis()) > MillisecondsCoverter.millisecondsInDays(20) )
+                || ((date2.getTimeInMillis() - date1.getTimeInMillis()) > MillisecondsCoverter.millisecondsInDays(20))) {
             System.out.println("Tem mais de 20 dias de diferença entre as datas.");
         }
         if (date1.compareTo(date2) == 0) {

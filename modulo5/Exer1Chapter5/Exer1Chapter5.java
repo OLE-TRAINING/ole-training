@@ -4,6 +4,6 @@ public class Exer1Chapter5 {
 
     public static void main(String args[]) {
         String word = "123456789";
-        Checker.checkCharacters(word);
+        Checker.checkWordLength(word,8);
     }
 }
