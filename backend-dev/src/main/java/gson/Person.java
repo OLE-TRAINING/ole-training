@@ -12,6 +12,8 @@ public class Person {
 	private BigDecimal salary;
 	private LocalDate registrationDate;
 
+	public Person() {}
+	
 	public Person(String name, Integer id, BigDecimal salary, LocalDate registrationDate) {
 		this.name = name;
 		this.id = id;
