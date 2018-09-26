@@ -1,12 +1,10 @@
 package reflectiontest;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import java.lang.reflect.InvocationTargetException;
-
+import java.lang.reflect.Method;
 import org.junit.Before;
 import org.junit.Test;
-
 import reflection.MethodReflection;
 
 public class MethodReflectionTest {
@@ -23,64 +21,48 @@ public class MethodReflectionTest {
 	}
 	
 	@Test
-	public void testDoWhatWithParamsIntegerParam() {
-		try {
-			assertThat(MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class)
-					.invoke(this.methodReflection, 10)).isEqualTo(10);
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} 
+	public void testDoWhatWithParamsIntegerParam() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method doWhatWithParams = MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class);
+		Integer actual = (Integer) doWhatWithParams.invoke(this.methodReflection, 10);
+		assertThat(actual).isEqualTo(10);
 	}
 	
 	@Test
-	public void testDoWhatWithParamsTwoIntegerParams() {
-		try {
-			assertThat(MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class, Integer.class)
-					.invoke(this.methodReflection, 10, 20)).isEqualTo("10, 20");
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} 
+	public void testDoWhatWithParamsTwoIntegerParams() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method doWhatWithParams = MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class, Integer.class);
+		String actual = (String) doWhatWithParams.invoke(this.methodReflection, 10, 20);
+		assertThat(actual).isEqualTo("10, 20");
 	}
 	
 	@Test
-	public void testDoWhatWithParamsStringParams() {
-		try {
-			assertThat(MethodReflection.class.getDeclaredMethod("doWhatWithParams", String.class)
-					.invoke(this.methodReflection, "10")).isEqualTo("10");
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} 
+	public void testDoWhatWithParamsStringParams() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method doWhatWithParams = MethodReflection.class.getDeclaredMethod("doWhatWithParams", String.class);
+		String actual = (String) doWhatWithParams.invoke(this.methodReflection, "10");
+		assertThat(actual).isEqualTo("10"); 
 	}
 	
 	@Test
-	public void testDoWhatWithParamsNoParams() {
-		try {
-			assertThat(MethodReflection.class.getDeclaredMethod("doWhatWithParams")
-					.invoke(this.methodReflection)).isEqualTo(5);
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} 
+	public void testDoWhatWithParamsNoParams() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method doWhatWithParams = MethodReflection.class.getDeclaredMethod("doWhatWithParams");
+		Integer actual = (Integer) doWhatWithParams.invoke(this.methodReflection);
+		assertThat(actual).isEqualTo(5); 
 	}
 	
 	@Test
-	public void testDoWhatWithParamsIntegerStringParams() {
-		try {
-			MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class, String.class)
-					.invoke(this.methodReflection, 10, "a");
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} 
+	public void testDoWhatWithParamsIntegerStringParams() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method doWhatWithParams = MethodReflection.class.getDeclaredMethod("doWhatWithParams", Integer.class, String.class);
+		String actual = (String) doWhatWithParams.invoke(this.methodReflection, 10, "20");
+		assertThat(actual).isEqualTo("20 10"); 
 	}
 	
 	@Test
-	public void testDoWhatWithParamsIntegerStringParamsNoSuchMethodException() {
+	public void testDoWhatWithParamsIntegerStringParamsNoSuchMethodException() throws SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		NoSuchMethodException e = null;
 		try {
-			MethodReflection.class.getDeclaredMethod("doWhatsWithParams", Integer.class, String.class)
-					.invoke(this.methodReflection, 10, "a");
-		} catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			assertThat(e.getMessage()).isEqualTo("reflection.MethodReflection.doWhatsWithParams(java.lang.Integer, java.lang.String)");
+			MethodReflection.class.getDeclaredMethod("doWhawtWithParams", Integer.class, String.class);
+		} catch (NoSuchMethodException e1) {
+			e = e1;
 		}
+		assertThat(e).isNotNull(); 
 	}
 }
