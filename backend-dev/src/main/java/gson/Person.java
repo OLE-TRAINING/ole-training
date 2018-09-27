@@ -3,6 +3,8 @@ package gson;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 // topic 1
 public class Person {
 
@@ -13,7 +15,7 @@ public class Person {
 	private LocalDate registrationDate;
 
 	public Person() {}
-	
+
 	public Person(String name, Integer id, BigDecimal salary, LocalDate registrationDate) {
 		this.name = name;
 		this.id = id;
