@@ -14,7 +14,10 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import gson.Person;
+import httpclient.CheckHttpCodeStatusExceptions;
+import httpclient.HttpStatusCode;
 import httpclient.UnirestConfig;
+import httpclient.exceptions.UnauthenticationException;
 
 public class HttpRequestsTest {
 
@@ -69,12 +72,12 @@ public class HttpRequestsTest {
 		person.setName("OutroNome");
 		person.setRegistrationDate(LocalDate.now());
 		person.setSalary(new BigDecimal("5000"));
-		
+
 		com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
 		String json = objectMapper.writeValueAsString(person);
 
-		HttpResponse<JsonNode> jsonResponse = Unirest.put("http://www.mocky.io/v2/5babc27b3100005500654505")
-				.body(json).asJson();
+		HttpResponse<JsonNode> jsonResponse = Unirest.put("http://www.mocky.io/v2/5babc27b3100005500654505").body(json)
+				.asJson();
 
 		assertThat(jsonResponse.getStatus()).isEqualTo(200);
 	}
@@ -102,17 +105,22 @@ public class HttpRequestsTest {
 	public void testDeletePerson() throws UnirestException {
 		HttpResponse<JsonNode> jsonResponse = Unirest.delete("http://www.mocky.io/v2/5babc27b3100005500654505?id=1")
 				.asJson();
-		
+
 		assertThat(jsonResponse.getStatus()).isEqualTo(200);
 	}
-	
+
 	// topic 9
-	@Test(expected = IllegalAccessException.class)
-	public void testThrowingException() throws UnirestException, IllegalAccessException {
+	@Test
+	public void testThrowingUnauthenticationException() throws Exception {
+		UnauthenticationException e = null;
+		
 		HttpResponse<JsonNode> httpResponse = Unirest.get("http://www.mocky.io/v2/5bace7b43300005e000eb427").asJson();
 		
-		if (httpResponse.getStatus() == 401) {
-			throw new IllegalAccessException("Http status code 401.");
+		try {
+			CheckHttpCodeStatusExceptions.checkHttpResponse(httpResponse);
+		} catch (UnauthenticationException e1) {
+			e = e1;
 		}
+		assertThat(e.getMessage()).isEqualTo(HttpStatusCode.UNAUTHORIZED.getException().getMessage());
 	}
 }
