@@ -75,6 +75,23 @@ Unit tests for exercise should be developed. <br>
 **8** - Call a service that deletes a Person. <br>
 **9** - Call a service to return an HTTP error and throw a new exception according to the name of the received code status. <br>
 
+### JDBC API
+
+</br>
+
+**1** - Studying over JDBC API. <br>
+**2** - We will use Mysql Database for the exercices. Setup Mysql enviroment. <br>
+**3** - Create the Address object that will have the attributes, publicPlace (type character), id (type numerical), number (type character), postalCode (type character), city (type character), state (type char) and neighborhood (type character). <br>
+	  - Create the Animal object that will have the attributes, id (type numerical), name (type character), type (type character) and age (type numerical). <br>
+	  - Now, a person can have an address, and several animals. <br>
+**3** - Create a structure that queries, creates, updates, and deletes a Person, Address, and Animal. <br>
+**4** - With the structure created, create methods to fetch a person's animals. <br>
+	  - Find the address of the person. <br>
+	  - List the animals of a person. <br>
+	  - Identify whether the animal belongs to a person. <br>
+	  - Delete a person and all items that they own. <br>
+	  - Associate an animal from one person to another. <br>
+
 ## Android Specific Exercices
 
 <br>
