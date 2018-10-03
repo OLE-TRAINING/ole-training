@@ -92,6 +92,14 @@ Unit tests for exercise should be developed. <br>
 	  - Delete a person and all items that they own. <br>
 	  - Associate an animal from one person to another. <br>
 
+### JPA
+
+</br>
+
+**1** - Studying over JPA specification. <br>
+**2** - Studying over ORM implementation. <br>
+**3** - Create a new module by migrating the entire JDBC module to JPA. <br>
+
 ## Android Specific Exercices
 
 <br>
