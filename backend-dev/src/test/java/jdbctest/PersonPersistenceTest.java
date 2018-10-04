@@ -16,6 +16,7 @@ import gson.Person;
 import jdbc.Address;
 import jdbc.MySQLAccess;
 import jdbc.PersonPersistence;
+import jdbc.SQLScript;
 
 public class PersonPersistenceTest {
 
@@ -27,12 +28,12 @@ public class PersonPersistenceTest {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
+			SQLScript.getScriptRunnerWithSQLFileLoaded(conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	// it will cause an exception after the first time the data was inserted, but that only means it worked.
 	@Test
 	public void testInsertPerson() throws SQLException {
 		Person person = new Person("Alexandre", 8, new BigDecimal("1500"), LocalDate.now());
@@ -62,7 +63,7 @@ public class PersonPersistenceTest {
 	
 	@Test
 	public void testDeletePerson() {
-		int rowsAffected = PersonPersistence.deletePerson(2, conn);
+		int rowsAffected = PersonPersistence.deletePerson(1, conn);
 		assertThat(rowsAffected).isEqualTo(1);
 	}
 }

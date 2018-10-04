@@ -10,27 +10,24 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Spy;
 
 import jdbc.Address;
 import jdbc.Animal;
 import jdbc.ExercisesQueries;
 import jdbc.MySQLAccess;
-import jdbc.Persistence;
+import jdbc.SQLScript;
 
 public class ExercisesQueriesTest {
 
 	private Connection conn;
 	private Statement stmt;
 
-	@Spy
-	private Persistence persistenceUnit;
-
 	@Before
 	public void initialize() {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
+			SQLScript.getScriptRunnerWithSQLFileLoaded(conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -40,7 +37,7 @@ public class ExercisesQueriesTest {
 	public void testGetPersonAddress() throws SQLException {
 		Address address = new Address();
 		address.setId(2);
-		Address personsAddress = ExercisesQueries.getPersonAddress(3, stmt);
+		Address personsAddress = ExercisesQueries.getPersonAddress(2, stmt);
 		assertThat(personsAddress).isEqualTo(address);
 	}
 
@@ -62,17 +59,13 @@ public class ExercisesQueriesTest {
 		animal.setId(1);
 		animals.add(animal);
 
-		animal = new Animal();
-		animal.setId(10);
-		animals.add(animal);
-
-		List<Animal> personsAnimals = ExercisesQueries.getPersonsListOfAnimals(3, stmt);
+		List<Animal> personsAnimals = ExercisesQueries.getPersonsListOfAnimals(1, stmt);
 		assertThat(personsAnimals).isEqualTo(animals);
 	}
 
 	@Test
 	public void testAnimalBelongsToPersonTrue() throws SQLException {
-		boolean animalBelongsToPerson = ExercisesQueries.animalBelongsToPerson(1, 3, stmt);
+		boolean animalBelongsToPerson = ExercisesQueries.animalBelongsToPerson(1, 1, stmt);
 		assertThat(animalBelongsToPerson).isEqualTo(true);
 	}
 
@@ -84,8 +77,8 @@ public class ExercisesQueriesTest {
 
 	@Test
 	public void testDeletePersonAndAllItemsTheyOwn() throws SQLException {
-		int rowsAffected = ExercisesQueries.deletePersonAndAllItemsTheyOwn(10, stmt);
-		assertThat(rowsAffected).isEqualTo(0);
+		int rowsAffected = ExercisesQueries.deletePersonAndAllItemsTheyOwn(1, stmt);
+		assertThat(rowsAffected).isEqualTo(1);
 	}
 
 	@Test
@@ -101,7 +94,7 @@ public class ExercisesQueriesTest {
 
 	@Test
 	public void testAssociateAnimalFromOnePersonToAnother() throws SQLException {
-		int rowsAffected = ExercisesQueries.associateAnimalFromOnePersonToAnother(1, 1, stmt);
+		int rowsAffected = ExercisesQueries.associateAnimalFromOnePersonToAnother(1, 10, stmt);
 		assertThat(rowsAffected).isEqualTo(1);
 	}
 }

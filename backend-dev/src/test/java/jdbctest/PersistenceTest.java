@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import jdbc.MySQLAccess;
 import jdbc.Persistence;
+import jdbc.SQLScript;
 
 public class PersistenceTest {
 
@@ -25,6 +26,7 @@ public class PersistenceTest {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
+			SQLScript.getScriptRunnerWithSQLFileLoaded(conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -63,7 +65,7 @@ public class PersistenceTest {
 	@Test
 	public void testInsertObject() throws SQLException {
 		String[] fields = { "id", "name", "type", "age", "owner_id" };
-		Object[] fieldsValues = {20, "Lilly", "cat", 3, 2};
+		Object[] fieldsValues = {20, "Jade", "cat", 4, 2};
 		Persistence.insertObject("animal", fields, fieldsValues, conn);
 		
 		ResultSet rs = stmt.executeQuery("select * from animal where id = 20");
@@ -81,7 +83,7 @@ public class PersistenceTest {
 	
 	@Test
 	public void testDeleteObject() {
-		int rowsAffected = Persistence.deleteObject("animal", "id", 20, conn);
+		int rowsAffected = Persistence.deleteObject("animal", "id", 1, conn);
 		assertThat(rowsAffected).isEqualTo(1);
 	}
 	

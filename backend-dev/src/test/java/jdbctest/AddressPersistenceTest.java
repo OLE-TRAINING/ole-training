@@ -13,6 +13,7 @@ import org.junit.Test;
 import jdbc.Address;
 import jdbc.AddressPersistence;
 import jdbc.MySQLAccess;
+import jdbc.SQLScript;
 
 public class AddressPersistenceTest {
 
@@ -24,6 +25,7 @@ public class AddressPersistenceTest {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
+			SQLScript.getScriptRunnerWithSQLFileLoaded(conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -31,10 +33,10 @@ public class AddressPersistenceTest {
 	
 	@Test
 	public void testInsertAddress() throws SQLException {
-		Address address = new Address("pb10", 3, "30", "pc24", "city777", "state121", "nb00");
+		Address address = new Address("pb10", 4, "30", "pc24", "city777", "state121", "nb00");
 		AddressPersistence.insertAddress(address, conn);
 		
-		ResultSet rs = stmt.executeQuery("select * from person where id = 3");
+		ResultSet rs = stmt.executeQuery("select * from address where id = 4");
 		assertThat(rs.next()).isEqualTo(true);
 	}
 	

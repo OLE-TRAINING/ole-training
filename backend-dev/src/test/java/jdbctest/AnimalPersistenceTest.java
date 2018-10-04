@@ -32,19 +32,19 @@ public class AnimalPersistenceTest {
 	
 	@Test
 	public void testInsertAnimal() throws SQLException {
-		Animal animal = new Animal(10, "Breado", "cat", 3);
+		Animal animal = new Animal(2, "Breado", "cat", 3);
 		animal.setOwner(new Person());
 		animal.getOwner().setId(3);
 		AnimalPersistence.insertAnimal(animal, conn);
 		
-		ResultSet rs = stmt.executeQuery("select * from animal where id = 10");
+		ResultSet rs = stmt.executeQuery("select * from animal where id = 2");
 		assertThat(rs.next()).isEqualTo(true);
 	}
 	
 	@Test
 	public void testUpdateAnimal() {
 		String[] fields = { "name", "type" };
-		Object[] values = { "Lilly", "cat" };
+		Object[] values = { "Breado", "kitten" };
 		int rowsAffected = AnimalPersistence.updateAnimal(1, fields, values, conn);
 		assertThat(rowsAffected).isEqualTo(1);
 	}
