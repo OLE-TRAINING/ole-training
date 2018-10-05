@@ -28,42 +28,22 @@ CREATE TABLE `animal` (
   `type` varchar(50) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `owner_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `animal`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_c
 
 ALTER TABLE `address`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_dweller_id` (`dweller_id`);
 
---
--- Indexes for table `animal`
---
 ALTER TABLE `animal`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_owner_id` (`owner_id`);
 
---
--- Indexes for table `person`
---
 ALTER TABLE `person`
   ADD PRIMARY KEY (`id`);
 
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `animal`
---
 ALTER TABLE `animal`
   ADD CONSTRAINT `fk_owner_id` FOREIGN KEY (`owner_id`) REFERENCES `person` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Limitadores para a tabela `person`
---
 ALTER TABLE `address`
   ADD CONSTRAINT `fk_dweller_id` FOREIGN KEY (`dweller_id`) REFERENCES `person` (`id`) ON DELETE CASCADE ON UPDATE CASCADE; 
   
