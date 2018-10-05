@@ -74,20 +74,6 @@ public class ExercisesQueries {
 		return animalBelongsToPerson;
 	}
 
-	private static String buildSelectAddressId(Integer personId) {
-		return "select address_id from person where id = " + personId;
-	}
-
-	public static int deletePersonAndAllItemsTheyOwn(Integer id, Statement stmt) throws SQLException {
-		ResultSet rs = Persistence.executeQuery(stmt, buildSelectAddressId(id));
-		rs.next();
-		AddressPersistence.deleteAddress(rs.getInt("address_id"), stmt.getConnection());
-		return PersonPersistence.deletePerson(id, stmt.getConnection()); // no need to delete the animal, deleting
-																			// the person automatically deletes it
-																			// (on delete cascade for
-																			// animal.owner_id)
-	}
-
 	public static int associateAnimalFromOnePersonToAnother(Integer receiverPersonId, Integer animalId, Statement stmt)
 			throws SQLException {
 		String[] field = { "owner_id" };

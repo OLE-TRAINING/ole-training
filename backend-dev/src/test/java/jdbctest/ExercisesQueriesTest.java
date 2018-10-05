@@ -76,23 +76,6 @@ public class ExercisesQueriesTest {
 	}
 
 	@Test
-	public void testDeletePersonAndAllItemsTheyOwn() throws SQLException {
-		int rowsAffected = ExercisesQueries.deletePersonAndAllItemsTheyOwn(1, stmt);
-		assertThat(rowsAffected).isEqualTo(1);
-	}
-
-	@Test
-	public void testDeletePersonAndAllItemsTheyOwnEmptyResultSet() {
-		SQLException e = null;
-		try {
-			ExercisesQueries.deletePersonAndAllItemsTheyOwn(10, stmt);
-		} catch (SQLException e1) {
-			e = e1;
-		}
-		assertThat(e.getMessage()).isEqualTo("Illegal operation on empty result set.");
-	}
-
-	@Test
 	public void testAssociateAnimalFromOnePersonToAnother() throws SQLException {
 		int rowsAffected = ExercisesQueries.associateAnimalFromOnePersonToAnother(1, 10, stmt);
 		assertThat(rowsAffected).isEqualTo(1);
