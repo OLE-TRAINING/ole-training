@@ -1,6 +1,7 @@
 package httpclient;
 
 import httpclient.exceptions.GoneException;
+import httpclient.exceptions.NotFoundException;
 import httpclient.exceptions.TooManyRequestsException;
 import httpclient.exceptions.UnauthenticationException;
 

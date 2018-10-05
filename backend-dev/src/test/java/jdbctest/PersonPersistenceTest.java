@@ -36,12 +36,12 @@ public class PersonPersistenceTest {
 
 	@Test
 	public void testInsertPerson() throws SQLException {
-		Person person = new Person("Alexandre", 8, new BigDecimal("1500"), LocalDate.now());
+		Person person = new Person("Alexandre", 7, new BigDecimal("1500"), LocalDate.now());
 		person.setAddress(new Address());
 		person.getAddress().setId(1);
 		PersonPersistence.insertPerson(person, conn);
 
-		ResultSet rs = stmt.executeQuery("select * from person where id = 8");
+		ResultSet rs = stmt.executeQuery("select * from person where id = 7");
 		assertThat(rs.next()).isEqualTo(true);
 	}
 

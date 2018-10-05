@@ -1,4 +1,4 @@
-package httpclient;
+package httpclient.exceptions;
 
 @SuppressWarnings("serial")
 public class NotFoundException extends Exception {

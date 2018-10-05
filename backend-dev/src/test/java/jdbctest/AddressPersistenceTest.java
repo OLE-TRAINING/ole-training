@@ -42,8 +42,8 @@ public class AddressPersistenceTest {
 	
 	@Test
 	public void testUpdateAddress() {
-		String[] fields = { "public_place", "number" };
-		Object[] values = { "pbNew", "11" };
+		String[] fields = { "public_place", "id" };
+		Object[] values = { "pbNew", "13" };
 		int rowsAffected = AddressPersistence.updateAddress(2, fields, values, conn);
 		assertThat(rowsAffected).isEqualTo(1);
 	}
