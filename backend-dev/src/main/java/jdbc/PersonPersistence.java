@@ -12,8 +12,8 @@ public class PersonPersistence {
 	private PersonPersistence() {}
 
 	public static void insertPerson(Person person, Connection conn)  {
-		String[] objectFieldsNames = {"name", "id", "salary", "registration_date", "address_id"};
-		Object[] fieldsValues = {person.getName(), person.getId(), person.getSalary(), person.getRegistrationDate(), person.getAddress().getId()};
+		String[] objectFieldsNames = {"name", "id", "salary", "registration_date"};
+		Object[] fieldsValues = {person.getName(), person.getId(), person.getSalary(), person.getRegistrationDate()};
 		Persistence.insertObject(tableName, objectFieldsNames, fieldsValues, conn);
 	}
 	

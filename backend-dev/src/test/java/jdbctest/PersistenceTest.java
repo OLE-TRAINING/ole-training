@@ -9,7 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import jdbc.MySQLAccess;
@@ -18,11 +19,11 @@ import jdbc.SQLScript;
 
 public class PersistenceTest {
 
-	private Connection conn;
-	private Statement stmt;
+	private static Connection conn;
+	private static Statement stmt;
 
-	@Before
-	public void initialize() {
+	@BeforeClass
+	public static void initialize() {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
@@ -70,6 +71,8 @@ public class PersistenceTest {
 		
 		ResultSet rs = stmt.executeQuery("select * from animal where id = 20");
 		assertThat(rs.next()).isEqualTo(true);
+		
+		rs.close();
 	}
 	
 	@Test
@@ -97,5 +100,11 @@ public class PersistenceTest {
 	public void testExecuteQueryPersonDoesNotExist() throws SQLException {
 		ResultSet rs = Persistence.executeQuery(stmt, "select * from person where id = 22");
 		assertThat(rs.next()).isEqualTo(false);
+	}
+	
+	@AfterClass
+	public static void after() throws SQLException {
+		stmt.close();
+		conn.close();
 	}
 }

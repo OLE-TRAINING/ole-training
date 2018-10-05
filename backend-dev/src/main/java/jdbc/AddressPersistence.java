@@ -9,10 +9,10 @@ public class AddressPersistence {
 
 	private AddressPersistence() {}
 	
-	public static void insertAddress(Address address, Connection conn) {
-		String[] fields = {"public_place", "id", "number", "postal_code", "city", "state", "neighborhood"};
+	public static void insertAddress(Address address, int dwellerId, Connection conn) {
+		String[] fields = {"public_place", "id", "number", "postal_code", "city", "state", "neighborhood", "dweller_id"};
 		Object[] fieldsValues = {address.getPublicPlace(), address.getId(), address.getNumber(), address.getPostalCode(),
-				address.getCity(), address.getState(), address.getNeighborhood()};
+				address.getCity(), address.getState(), address.getNeighborhood(), dwellerId};
 		Persistence.insertObject(tableName, fields, fieldsValues, conn);
 	}
 	

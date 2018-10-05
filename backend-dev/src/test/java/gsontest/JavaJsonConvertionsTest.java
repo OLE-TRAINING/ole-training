@@ -12,7 +12,7 @@ public class JavaJsonConvertionsTest {
 	@Test
 	public void testConvertJavaToJson() {
 		assertThat(JavaJsonConvertions.convertJavaToJson(new Person("Bruno", 1, new BigDecimal("1200"), LocalDate.parse("2018-09-21"))))
-			.isEqualTo("{\"name\":\"Bruno\",\"id\":1,\"salary\":1200,\"registrationDate\":{\"year\":2018,\"month\":9,\"day\":21}}");
+			.isEqualTo("{\"name\":\"Bruno\",\"id\":1,\"salary\":1200,\"registrationDate\":{\"year\":2018,\"month\":9,\"day\":21},\"animals\":[]}");
 	}
 
 	@Test
@@ -25,6 +25,7 @@ public class JavaJsonConvertionsTest {
 	@Test
 	public void testConvertJavaToJsonWithoutExcludedFields() {
 		Person person = new Person("Bruno", 1, new BigDecimal("1200"), LocalDate.parse("2018-09-21"));
+		person.setAnimals(null);
 		assertThat(JavaJsonConvertions.convertJavaToJsonWithoutExcludedFields(person)).
 			isEqualTo("{\"name\":\"Bruno\",\"salary\":1200,\"registrationDate\":{\"year\":2018,\"month\":9,\"day\":21}}");
 	}

@@ -8,7 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import jdbc.Address;
@@ -19,11 +20,11 @@ import jdbc.SQLScript;
 
 public class ExercisesQueriesTest {
 
-	private Connection conn;
-	private Statement stmt;
+	private static Connection conn;
+	private static Statement stmt;
 
-	@Before
-	public void initialize() {
+	@BeforeClass
+	public static void initialize() {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
@@ -79,5 +80,11 @@ public class ExercisesQueriesTest {
 	public void testAssociateAnimalFromOnePersonToAnother() throws SQLException {
 		int rowsAffected = ExercisesQueries.associateAnimalFromOnePersonToAnother(1, 10, stmt);
 		assertThat(rowsAffected).isEqualTo(1);
+	}
+	
+	@AfterClass
+	public static void after() throws SQLException {
+		stmt.close();
+		conn.close();
 	}
 }

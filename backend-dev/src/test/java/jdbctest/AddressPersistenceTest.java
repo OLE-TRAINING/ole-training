@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import jdbc.Address;
@@ -17,11 +18,11 @@ import jdbc.SQLScript;
 
 public class AddressPersistenceTest {
 
-	private Connection conn;
-	private Statement stmt;
+	private static Connection conn;
+	private static Statement stmt;
 
-	@Before
-	public void initialize() {
+	@BeforeClass
+	public static void initialize() {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
@@ -33,11 +34,13 @@ public class AddressPersistenceTest {
 	
 	@Test
 	public void testInsertAddress() throws SQLException {
-		Address address = new Address("pb10", 4, "30", "pc24", "city777", "state121", "nb00");
-		AddressPersistence.insertAddress(address, conn);
+		Address address = new Address("pb10", 3, "30", "pc24", "city777", "state121", "nb00");
+		AddressPersistence.insertAddress(address, 3, conn);
 		
-		ResultSet rs = stmt.executeQuery("select * from address where id = 4");
+		ResultSet rs = stmt.executeQuery("select * from address where id = 3");
 		assertThat(rs.next()).isEqualTo(true);
+		
+		rs.close();
 	}
 	
 	@Test
@@ -52,5 +55,11 @@ public class AddressPersistenceTest {
 	public void testDeleteAddress() {
 		int rowsAffected = AddressPersistence.deleteAddress(1, conn);
 		assertThat(rowsAffected).isEqualTo(1);
+	}
+	
+	@AfterClass
+	public static void after() throws SQLException {
+		stmt.close();
+		conn.close();
 	}
 }

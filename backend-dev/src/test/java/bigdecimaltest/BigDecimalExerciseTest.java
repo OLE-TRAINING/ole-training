@@ -17,12 +17,6 @@ public class BigDecimalExerciseTest {
 	}
 	
 	@Test
-	public void testReverseSignOfANumberFail() {
-		assertEquals(new BigDecimal("10"), 
-				BigDecimalExercise.reverseSignOfANumber(new BigDecimal("10")));
-	}
-	
-	@Test
 	public void testGetLargestNumberFistNumberIsTheLargest() {
 		assertEquals(new BigDecimal("3"),
 				BigDecimalExercise.getLargestNumber(new BigDecimal("3"), 

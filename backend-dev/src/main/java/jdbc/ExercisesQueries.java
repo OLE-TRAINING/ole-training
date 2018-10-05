@@ -12,7 +12,7 @@ public class ExercisesQueries {
 	}
 
 	private static String buildGetPersonAddressQuery(Integer id) {
-		return "select address.* from person inner join address on person.address_id = address.id where person.id = "
+		return "select address.* from person inner join address on person.id = address.dweller_id where person.id = "
 				+ id;
 	}
 

@@ -9,22 +9,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import gson.Person;
-import jdbc.Address;
 import jdbc.MySQLAccess;
 import jdbc.PersonPersistence;
 import jdbc.SQLScript;
 
 public class PersonPersistenceTest {
 
-	private Connection conn;
-	private Statement stmt;
+	private static Connection conn;
+	private static Statement stmt;
 
-	@Before
-	public void initialize() {
+	@BeforeClass
+	public static void initialize() {
 		try {
 			conn = MySQLAccess.getConnection();
 			stmt = conn.createStatement();
@@ -37,12 +37,12 @@ public class PersonPersistenceTest {
 	@Test
 	public void testInsertPerson() throws SQLException {
 		Person person = new Person("Alexandre", 7, new BigDecimal("1500"), LocalDate.now());
-		person.setAddress(new Address());
-		person.getAddress().setId(1);
 		PersonPersistence.insertPerson(person, conn);
 
 		ResultSet rs = stmt.executeQuery("select * from person where id = 7");
 		assertThat(rs.next()).isEqualTo(true);
+		
+		rs.close();
 	}
 
 	@Test
@@ -65,5 +65,11 @@ public class PersonPersistenceTest {
 	public void testDeletePerson() {
 		int rowsAffected = PersonPersistence.deletePerson(1, conn);
 		assertThat(rowsAffected).isEqualTo(1);
+	}
+	
+	@AfterClass
+	public static void after() throws SQLException {
+		stmt.close();
+		conn.close();
 	}
 }
