@@ -1,12 +1,16 @@
 package reflectiontest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
 import org.junit.Test;
+
 import gson.Person;
+import jdbc.Address;
 import reflection.ErrorResponse;
 import reflection.NullFieldException;
 import reflection.NullFieldsMessages;
@@ -54,6 +58,7 @@ public class ReflectionExerciseTest {
 	public void testValidatePersonFieldsNoException() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		Constructor<Person> personConstructor = Person.class.getConstructor(String.class, Integer.class, BigDecimal.class, LocalDate.class);
 		Person person = personConstructor.newInstance("Bruno", 1, new BigDecimal("1500"), LocalDate.now());
+		person.setAddress(new Address());
 		ReflectionExercise.validatePersonFields(person);
 	}
 }
